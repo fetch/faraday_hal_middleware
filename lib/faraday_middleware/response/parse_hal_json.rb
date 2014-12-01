@@ -1,14 +1,7 @@
-require 'faraday_middleware/response_middleware'
+require 'faraday_middleware/response/parse_json'
 
 module FaradayMiddleware
-  # Public: Parse response bodies as JSON.
-  class ParseHalJson < ResponseMiddleware
-    dependency do
-      require 'json' unless defined?(::JSON)
-    end
-
-    define_parser do |body|
-      ::JSON.parse body unless body.strip.empty?
-    end
+  # JSON+HAL is just JSON
+  class ParseHalJson < ParseJson
   end
 end

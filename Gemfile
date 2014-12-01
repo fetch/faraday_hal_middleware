@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in faraday_hal_middleware.gemspec
+gem 'json'
+gem 'rake', '>= 0.9'
+
+group :test do
+  gem 'rspec', '>= 3'
+  gem 'webmock'
+end
+
 gemspec
