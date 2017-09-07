@@ -60,8 +60,8 @@ describe FaradayMiddleware::ParseHalJson, :type => :response do
   end
 
   it "chokes on invalid json" do
-    ['{!', '"a"', 'true', 'null', '1'].each do |data|
-      expect{ process(data) }.to raise_error(Faraday::Error::ParsingError)
+    ['{!', '"a'].each do |data|
+      expect{ process(data) }.to raise_error(Faraday::ParsingError)
     end
   end
 
