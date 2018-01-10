@@ -1,18 +1,23 @@
 require 'faraday_middleware/request/encode_hal_json'
 
 describe FaradayMiddleware::EncodeHalJson do
-  let(:middleware) { described_class.new(lambda{|env| env}) }
+  let(:middleware) { described_class.new(->(env) { env }) }
 
   def process(body, content_type = nil)
-    env = {:body => body, :request_headers => Faraday::Utils::Headers.new}
+    env = { body: body, request_headers: Faraday::Utils::Headers.new }
     env[:request_headers]['content-type'] = content_type if content_type
     middleware.call(faraday_env(env))
   end
 
-  def result_body() result[:body] end
-  def result_type() result[:request_headers]['content-type'] end
+  def result_body
+    result[:body]
+  end
 
-  context "no body" do
+  def result_type
+    result[:request_headers]['content-type']
+  end
+
+  context 'no body' do
     let(:result) { process(nil) }
 
     it "doesn't change body" do
@@ -24,7 +29,7 @@ describe FaradayMiddleware::EncodeHalJson do
     end
   end
 
-  context "empty body" do
+  context 'empty body' do
     let(:result) { process('') }
 
     it "doesn't change body" do
@@ -36,42 +41,42 @@ describe FaradayMiddleware::EncodeHalJson do
     end
   end
 
-  context "string body" do
+  context 'string body' do
     let(:result) { process('{"a":1}') }
 
     it "doesn't change body" do
       expect(result_body).to eq('{"a":1}')
     end
 
-    it "adds content type" do
+    it 'adds content type' do
       expect(result_type).to eq('application/hal+json')
     end
   end
 
-  context "object body" do
-    let(:result) { process({:a => 1}) }
+  context 'object body' do
+    let(:result) { process(a: 1) }
 
-    it "encodes body" do
+    it 'encodes body' do
       expect(result_body).to eq('{"a":1}')
     end
 
-    it "adds content type" do
+    it 'adds content type' do
       expect(result_type).to eq('application/hal+json')
     end
   end
 
-  context "empty object body" do
+  context 'empty object body' do
     let(:result) { process({}) }
 
-    it "encodes body" do
+    it 'encodes body' do
       expect(result_body).to eq('{}')
     end
   end
 
-  context "object body with json type" do
-    let(:result) { process({:a => 1}, 'application/hal+json; charset=utf-8') }
+  context 'object body with json type' do
+    let(:result) { process({ a: 1 }, 'application/hal+json; charset=utf-8') }
 
-    it "encodes body" do
+    it 'encodes body' do
       expect(result_body).to eq('{"a":1}')
     end
 
@@ -80,11 +85,11 @@ describe FaradayMiddleware::EncodeHalJson do
     end
   end
 
-  context "object body with incompatible type" do
-    let(:result) { process({:a => 1}, 'application/xml; charset=utf-8') }
+  context 'object body with incompatible type' do
+    let(:result) { process({ a: 1 }, 'application/xml; charset=utf-8') }
 
     it "doesn't change body" do
-      expect(result_body).to eq({:a => 1})
+      expect(result_body).to eq(a: 1)
     end
 
     it "doesn't change content type" do
