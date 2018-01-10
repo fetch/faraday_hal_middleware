@@ -3,7 +3,6 @@ require 'faraday'
 require 'faraday_middleware'
 
 module FaradayHalMiddleware
-
 end
 
 module FaradayMiddleware
@@ -12,9 +11,9 @@ module FaradayMiddleware
 
   if Faraday::Middleware.respond_to? :register_middleware
     Faraday::Request.register_middleware \
-          :hal_json    => lambda { EncodeHalJson }
+      hal_json: -> { EncodeHalJson }
 
     Faraday::Response.register_middleware \
-          :hal_json    => lambda { ParseHalJson }
+      hal_json: -> { ParseHalJson }
   end
 end
