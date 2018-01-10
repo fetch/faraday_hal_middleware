@@ -1,4 +1,4 @@
-# Contributing to Faraday HAL Middleware
+# Contributing to FaradayHalMiddleware
 
 This project is work of [many contributors](https://github.com/fetch/faraday_hal_middleware/graphs/contributors).
 

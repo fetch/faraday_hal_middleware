@@ -1,4 +1,4 @@
-# Releasing Faraday HAL Middleware
+# Releasing FaradayHalMiddleware
 
 There're no hard rules about when to release faraday_hal_middleware. Release bug fixes frequently, features not so frequently and breaking API changes rarely.
 
