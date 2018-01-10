@@ -2,6 +2,8 @@
 
 Faraday Middleware for JSON HAL requests and responses
 
+[![Build Status](https://travis-ci.org/fetch/faraday_hal_middleware.svg?branch=master)](https://travis-ci.org/fetch/faraday_hal_middleware)
+
 ## Installation
 
 Add this line to your application's Gemfile:
