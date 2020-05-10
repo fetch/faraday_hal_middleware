@@ -1,3 +1,7 @@
+### 0.1.2 (Next)
+
+* Your contribution here.
+
 ### 0.1.1 (2020/05/10)
 
 * [#6](https://github.com/fetch/faraday_hal_middleware/pull/6): Added CHANGELOG, CONTRIBUTING and RELEASING - [@dblock](https://github.com/dblock).
