@@ -2,8 +2,8 @@
 
 require 'faraday'
 
-module FaradayHalMiddleware
-  class Request
+module Faraday
+  module HalJson
     # Request middleware that encodes the body as JSON.
     #
     # Processes only requests with matching Content-type or those without a type.
@@ -11,7 +11,7 @@ module FaradayHalMiddleware
     # to JSON MIME-type.
     #
     # Doesn't try to encode bodies that already are in string form.
-    class HalJson < Faraday::Middleware
+    class Request < Faraday::Middleware
       CONTENT_TYPE = 'Content-Type'
       MIME_TYPE    = 'application/hal+json'
 

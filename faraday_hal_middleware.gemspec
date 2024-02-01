@@ -2,11 +2,12 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'faraday_hal_middleware/version'
+
+require 'faraday/hal_json/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'faraday_hal_middleware'
-  spec.version       = FaradayHalMiddleware::VERSION
+  spec.version       = Faraday::HalJson::VERSION
   spec.authors       = ['Koen Punt']
   spec.email         = ['koen@fetch.nl']
   spec.summary       = 'Faraday Middleware for JSON HAL requests and responses.'
@@ -18,6 +19,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'faraday', '>= 2.0'
+  spec.add_dependency 'faraday', '~> 2.0'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end

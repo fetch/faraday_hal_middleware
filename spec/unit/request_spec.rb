@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'faraday_hal_middleware/request/hal_json'
+require 'spec_helper'
 
 # mostly https://github.com/lostisland/faraday/blob/main/spec/faraday/request/json_spec.rb
-describe FaradayHalMiddleware::Request::HalJson, type: :request do
+describe Faraday::HalJson::Request, type: :request do
   let(:middleware) { described_class.new(->(env) { Faraday::Response.new(env) }) }
 
   def process(body, content_type = nil)
