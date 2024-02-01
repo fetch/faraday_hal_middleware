@@ -2,7 +2,7 @@
 
 [Faraday](https://github.com/lostisland/faraday) Middleware for JSON HAL requests and responses with `application/hal+json` content-type.
 
-[![Build Status](https://travis-ci.org/fetch/faraday_hal_middleware.svg?branch=master)](https://travis-ci.org/fetch/faraday_hal_middleware)
+[![test](https://github.com/fetch/faraday_hal_middleware/actions/workflows/test.yml/badge.svg)](https://github.com/fetch/faraday_hal_middleware/actions/workflows/test.yml)
 
 ## Installation
 
