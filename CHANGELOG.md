@@ -1,5 +1,6 @@
 ### 0.2.0 (Next)
 
+* [#11](https://github.com/fetch/faraday_hal_middleware/pull/11): Refactor into Faraday::HalJson::Request and Response - [@dblock](https://github.com/dblock).
 * [#9](https://github.com/fetch/faraday_hal_middleware/pull/9): Added support for Faraday 2, removed dependency on deprecated `faraday_hal_middleware` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 

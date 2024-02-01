@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'faraday_hal_middleware/response/hal_json'
+require 'spec_helper'
 
 # copy of https://github.com/lostisland/faraday/blob/main/spec/faraday/response/json_spec.rb
-describe FaradayHalMiddleware::Response::HalJson do
+describe Faraday::HalJson::Response do
   let(:options) { {} }
   let(:headers) { {} }
   let(:middleware) do

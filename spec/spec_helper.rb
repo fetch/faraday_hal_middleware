@@ -3,6 +3,7 @@
 require 'rspec'
 require 'webmock/rspec'
 require 'faraday'
+require 'faraday_hal_middleware'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
