@@ -1,5 +1,6 @@
-### 0.1.2 (Next)
+### 0.2.0 (Next)
 
+* [#9](https://github.com/fetch/faraday_hal_middleware/pull/9): Added support for Faraday 2, removed dependency on deprecated `faraday_hal_middleware` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.1.1 (2020/05/10)
