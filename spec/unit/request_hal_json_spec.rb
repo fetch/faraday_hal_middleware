@@ -1,12 +1,15 @@
-require 'faraday_middleware/request/encode_hal_json'
+# frozen_string_literal: true
 
-describe FaradayMiddleware::EncodeHalJson do
-  let(:middleware) { described_class.new(->(env) { env }) }
+require 'faraday_hal_middleware/request/hal_json'
+
+# mostly https://github.com/lostisland/faraday/blob/main/spec/faraday/request/json_spec.rb
+describe FaradayHalMiddleware::Request::HalJson, type: :request do
+  let(:middleware) { described_class.new(->(env) { Faraday::Response.new(env) }) }
 
   def process(body, content_type = nil)
     env = { body: body, request_headers: Faraday::Utils::Headers.new }
     env[:request_headers]['content-type'] = content_type if content_type
-    middleware.call(faraday_env(env))
+    middleware.call(Faraday::Env.from(env)).env
   end
 
   def result_body

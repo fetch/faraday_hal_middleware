@@ -2,7 +2,7 @@
 
 [Faraday](https://github.com/lostisland/faraday) Middleware for JSON HAL requests and responses with `application/hal+json` content-type.
 
-[![Build Status](https://travis-ci.org/fetch/faraday_hal_middleware.svg?branch=master)](https://travis-ci.org/fetch/faraday_hal_middleware)
+[![test](https://github.com/fetch/faraday_hal_middleware/actions/workflows/test.yml/badge.svg)](https://github.com/fetch/faraday_hal_middleware/actions/workflows/test.yml)
 
 ## Installation
 
@@ -12,9 +12,11 @@ Add this line to your application's Gemfile:
 gem 'faraday_hal_middleware'
 ```
 
+Use version 0.1.1 for Faraday 1.x, and >= 0.2.0 for newer versions of Faraday.
+
 ## Usage
 
-Use `faraday_hal_middleware` in a similar way to [other Faraday middleware](https://github.com/lostisland/faraday_middleware).
+Use `faraday_hal_middleware`.
 
 ```ruby
 require 'faraday_hal_middleware'
