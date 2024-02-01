@@ -1,3 +1,7 @@
+### 0.2.1 (Next)
+
+* Your contribution here.
+
 ### 0.2.0 (2024/02/01)
 
 * [#11](https://github.com/fetch/faraday_hal_middleware/pull/11): Refactor into Faraday::HalJson::Request and Response - [@dblock](https://github.com/dblock).
